@@ -1,15 +1,9 @@
-# Status pemindahan
+# Migrasi database pelatih ke GitHub Pages
 
-Halaman publik GitHub Pages menampilkan peta referensi wilayah dan tautan ke aplikasi lama yang dilindungi autentikasi Sites. Ini tahap awal, bukan pemindahan penuh dashboard.
+Portal publik, dashboard penuh (filter LMS/bukan LMS, kohort/tahun, peta, grafik Pusat/provinsi/kabupaten, daftar unik, riwayat dan ekspor) dan alur login Google tersedia dalam kode.
 
-Data pelatih, token Google Sheets, spreadsheet privat, dan server aplikasi lama tidak disertakan dalam repository publik.
+Konfigurasi auth-config.json masih kosong: layanan menolak pembacaan data sampai Firebase dan Apps Script dipasang. Lihat ACTIVATION.md. Database lama tetap dilindungi di https://persebaran-pelatih-desa.subditkapasitaspemde.chatgpt.site/.
 
-Login langsung di GitHub Pages, daftar email yang diizinkan admin, dan API terautentikasi belum dikonfigurasi. Semua permintaan data pada implementasi berikutnya harus diperiksa oleh server sebelum data dikirim. Jangan menggunakan penyembunyian tampilan atau localStorage sebagai kontrol akses.
+Dashboard hanya menerima data dari endpoint yang memeriksa token Google/Firebase dan email yang disetujui, lalu membaca spreadsheet privat. Tidak ada database, snapshot peserta atau token sinkronisasi lama dalam repositori publik.
 
-## Build
-
-Sumber React ada di src. Install dependency dari package.json lalu jalankan npm run build. Salin hasil dist ke akar repository untuk publikasi berbasis branch GitHub Pages. File .nojekyll menonaktifkan Jekyll.
-
-## Fitur yang masih berada di aplikasi lama
-
-Filter pelatihan/tahun/LMS, statistik, diagram, daftar dan riwayat pelatih, serta sinkronisasi Google Sheets. Aplikasi lama tetap memiliki pembatasan pengguna sebelumnya.
+Untuk membangun ulang: npm install, npm run build. Salin dist/index.html dan dist/assets ke root repository, serta auth-config.json. source.html adalah entry build. Hosting saat ini memakai GitHub Pages dari main/root.
