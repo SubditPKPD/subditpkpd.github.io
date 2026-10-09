@@ -1,9 +1,11 @@
 {
   "firebase": {
-    "apiKey": "",
-    "authDomain": "",
-    "projectId": "",
-    "appId": ""
+    "apiKey": "AIzaSyCI3XRVyr-1J9FrefvyNWe02FYbjm_oxJk",
+    "authDomain": "subditpkpd.firebaseapp.com",
+    "projectId": "subditpkpd",
+    "storageBucket": "subditpkpd.firebasestorage.app",
+    "messagingSenderId": "779856948437",
+    "appId": "1:779856948437:web:5ab7731b3add235d88865c"
   },
   "dataEndpoint": ""
 }
